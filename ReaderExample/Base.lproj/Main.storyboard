@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kD1-rW-Qik">
+                                <rect key="frame" x="139" y="430" width="136" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Taramayi baslat"/>
+                                <connections>
+                                    <segue destination="Db7-c5-9bD" kind="show" id="aXu-46-w7P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kD1-rW-Qik" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XMJ-r8-tds"/>
+                            <constraint firstItem="kD1-rW-Qik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvB-v3-kHB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+        <!--Mrz Controller-->
+        <scene sceneID="z5n-ZH-cLA">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Db7-c5-9bD" customClass="MrzController" customModule="ReaderExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMT-9j-Rup">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYt-SY-Xol" customClass="MrzScannerView" customModule="SanalogiReader">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vYt-SY-Xol" firstAttribute="trailing" secondItem="Gu3-gv-Svs" secondAttribute="trailing" id="L51-IZ-Fx6"/>
+                            <constraint firstItem="vYt-SY-Xol" firstAttribute="bottom" secondItem="Gu3-gv-Svs" secondAttribute="bottom" id="oBU-1e-szS"/>
+                            <constraint firstItem="vYt-SY-Xol" firstAttribute="leading" secondItem="Gu3-gv-Svs" secondAttribute="leading" id="ojh-Bw-SLk"/>
+                            <constraint firstItem="vYt-SY-Xol" firstAttribute="top" secondItem="Gu3-gv-Svs" secondAttribute="top" id="pJ5-jK-9JW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gu3-gv-Svs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J7b-tt-ThF"/>
+                    <connections>
+                        <outlet property="scannerView" destination="vYt-SY-Xol" id="Cpx-1b-IKW"/>
+                        <segue destination="wVN-mG-83N" kind="show" identifier="segue1" id="cc6-Lu-egQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyF-95-um5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZOu-Ia-2t7">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="wVN-mG-83N" customClass="ViewController" customModule="ReaderExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rqe-wa-oJW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYB-Zp-2D4">
+                                <rect key="frame" x="160.66666666666666" y="430" width="93" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="NFC TARA"/>
+                                <connections>
+                                    <action selector="scan:" destination="wVN-mG-83N" eventType="touchUpInside" id="09C-qj-Vly"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wYB-Zp-2D4" firstAttribute="centerY" secondItem="Rqe-wa-oJW" secondAttribute="centerY" id="9Ft-DM-QYa"/>
+                            <constraint firstItem="wYB-Zp-2D4" firstAttribute="centerX" secondItem="Rqe-wa-oJW" secondAttribute="centerX" id="uxH-mp-Vpy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ASi-lH-wUk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="R7u-fl-wBb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRi-5Z-xd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="139"/>
+        </scene>
+    </scenes>
+</document>

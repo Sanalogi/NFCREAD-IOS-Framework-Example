@@ -58,11 +58,11 @@ pod 'OpenSSL-Universal/Framework'
 <string>$(PRODUCT_NAME) would like to use Bluetooth to connect NFC readers.</string>
  
 ```
-## 4: You must add the api key to the plist.([How can i get api key?](https://nfcread.com))
+## 4: You must add the api key to the plist.([How can i get licence key?](https://nfcread.com))
 
 ```xml
   <key>SanalogiReaderToken</key>
-  <string>APIKEY</string>
+  <string>LICENCEKEY</string>
 ```
 
 ## 5: Include NFC in your project

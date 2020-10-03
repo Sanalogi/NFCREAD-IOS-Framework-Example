@@ -6,6 +6,6 @@ target 'ReaderExample' do
   use_frameworks!
 
   # Pods for ReaderExample
- 	pod 'SwiftyTesseract',    '~> 3.0'
+ 	
  	pod 'OpenSSL-Universal/Framework'
 end

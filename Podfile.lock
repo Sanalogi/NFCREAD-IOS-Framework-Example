@@ -1,20 +1,16 @@
 PODS:
   - OpenSSL-Universal/Framework (1.0.2.20)
-  - SwiftyTesseract (3.1.2)
 
 DEPENDENCIES:
   - OpenSSL-Universal/Framework
-  - SwiftyTesseract (~> 3.0)
 
 SPEC REPOS:
   trunk:
     - OpenSSL-Universal
-    - SwiftyTesseract
 
 SPEC CHECKSUMS:
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
-  SwiftyTesseract: d898472f63355f8bf023cbab2c80ceda0805a40c
 
-PODFILE CHECKSUM: e1eeea53337a2cd4530b3fd778464a6881d14ab2
+PODFILE CHECKSUM: f74aac3e1143d0b7f452350340324ed1bdd7d1f9
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

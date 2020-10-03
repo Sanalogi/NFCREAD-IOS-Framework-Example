@@ -14,15 +14,18 @@ NFC Read is a tool designed for reading and verifying the official documents suc
 
 ```
 DO NOT FORGET
-NFC reading works on devices with iOS13 and higher
+NFC operation works on devices with iOS13 and higher
+OCR scanning works iOS11 and higher versions
+Project deployment version must be iOS11 or higher
 ```
 
 ## 1: Add frameworks to your project
 
 ```
-1. SanalogiReader.framework 
+1. SanalogiReader.xcframework 
 2. ACSSmartCardIO.xcframework
-3. SmartCardIO.xcframework	
+3. SmartCardIO.xcframework
+4. Libtesseract.xcframework
 ```
 
 ```
@@ -32,7 +35,6 @@ Go to "General -> Frameworks, Libraries and Embedded Content" and make the added
 ## 2: Simply add the following line to your Podfile:
 
 ```ruby
-pod 'SwiftyTesseract',    '~> 3.0'
 pod 'OpenSSL-Universal/Framework'
 ```
 
@@ -124,9 +126,18 @@ class MrzController: UIViewController,MrzScannerViewDelegate {
 
 You can review the sample code to start reading from NFC.
 
+Getting image from iPad with external card reader can take time you can enable or disable to get image from iPad before readChip
+
 ```swift
- import UIKit
+    NFCReader.sharedInstance.getImageFromIpad = true//false
+```
+```swift
+import UIKit
+#if canImport(CoreNFC)
 import SanalogiReader
+#endif
+
+@available(iOS 13, *)
 
 class ViewController: UIViewController,NFCReaderDelegate {
     func didSuccess(data: DocumentModel) {
@@ -158,4 +169,41 @@ class ViewController: UIViewController,NFCReaderDelegate {
 
 ```
 Build Settings (All selected) -> Enable Bitcode = no
+```
+
+OCR Result Model
+
+```swift
+public class MrzScanResult {
+    public let documentImage: UIImage
+    public let documentType: String
+    public let countryCode: String
+    public let surnames: String
+    public let givenNames: String
+    public let documentNumber: String
+    public let nationality: String
+    public let birthDate: Date?
+    public let sex: String?
+    public let expiryDate: Date?
+    public let personalNumber: String
+    public let personalNumber2: String?
+    public let mrzString: String
+}
+```
+NFC Scan result Model
+```swift
+public class DocumentModel{
+    public private(set) lazy var documentType : String =
+    public private(set) lazy var documentSubType : String
+    public private(set) lazy var personalNumber : String
+    public private(set) lazy var documentNumber : String
+    public private(set) lazy var issuingAuthority : String
+    public private(set) lazy var documentExpiryDate : String
+    public private(set) lazy var dateOfBirth : String
+    public private(set) lazy var gender : String
+    public private(set) lazy var nationality : String
+    public lazy var lastName : String
+    public lazy var firstName : String
+    public var passportImage : UIImage
+}
 ```

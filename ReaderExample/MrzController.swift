@@ -2,17 +2,18 @@
 //  MrzController.swift
 //  ReaderExample
 //
-//  Created by Can Samet KATKAT on 20.08.2020.
-//  Copyright © 2020 Can Samet KATKAT. All rights reserved.
+//  Created by Sanalogi on 20.08.2020.
+//  Copyright © 2020 Sanalogi. All rights reserved.
 //
 
 import UIKit
 import SanalogiReader
 
+@available(iOS 11.0, *)
 class MrzController: UIViewController,MrzScannerViewDelegate {
     
     @IBOutlet weak var scannerView: MrzScannerView!
-    
+    var scanResult:MrzScanResult!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,28 @@ class MrzController: UIViewController,MrzScannerViewDelegate {
         scannerView.stopScanning()
     }
 
-    func mrzScannerView(_ mrzScannerView: MrzScannerView, didFind scanResult: MrzScanResult) {
-         performSegue(withIdentifier: "segue1", sender: nil)
+    @IBAction func closeTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-     
+    func mrzScannerView(_ mrzScannerView: MrzScannerView, didFind scanResult: MrzScanResult) {
+        if #available(iOS 13, *){
+            self.performSegue(withIdentifier: "segueToNfcScan", sender: nil)
+        }
+        else{
+            self.scanResult = scanResult
+            self.performSegue(withIdentifier: "segueToMrzScan", sender: nil)
+            
+            print(scanResult.countryCode)
+            print(scanResult.documentNumber)
+            print(scanResult.givenNames)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToMrzScan"{
+            if let vc = segue.destination as? MrzResultController{
+                vc.scanResult = self.scanResult
+            }
+        }
+    }
 }

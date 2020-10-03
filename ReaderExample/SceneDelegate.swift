@@ -2,12 +2,13 @@
 //  SceneDelegate.swift
 //  ReaderExample
 //
-//  Created by Can Samet KATKAT on 20.08.2020.
-//  Copyright © 2020 Can Samet KATKAT. All rights reserved.
+//  Created by Sanalogi on 20.08.2020.
+//  Copyright © 2020 Sanalogi. All rights reserved.
 //
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?

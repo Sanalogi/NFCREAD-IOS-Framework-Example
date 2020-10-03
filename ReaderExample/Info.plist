@@ -31,7 +31,7 @@ We need to access NFC for scan passport.</string>
 	<key>NSCameraUsageDescription</key>
 	<string> We need to access camera.</string>
 	<key>SanalogiReaderToken</key>
-	<string></string>
+	<string>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjM2IiwiaHR0cDovL3d3dy5zYW5hbG9naS5jb20vaWRlbnRpdHkvY2xhaW1zL0FwcGxpY2F0aW9uTmFtZSI6ImNvbS5zYW5hbG9naS5SZWFkZXJFeGFtcGxlIiwiaHR0cDovL3d3dy5zYW5hbG9naS5jb20vaWRlbnRpdHkvY2xhaW1zL1BsYXRmb3JtIjoiSU9TIiwiaXNzIjoiU2FuYWxvZ1Rva2VucyIsImF1ZCI6IlNhbmFsb2dUb2tlbnMifQ.QUMqbylLRkezDhwnTrwcEPb5rd-HX8OgTIig0XvjsdQ</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

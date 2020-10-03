@@ -1,0 +1,790 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SanalogiReader
+import ACSSmartCardIO
+import AVFoundation
+import AudioToolbox
+import Combine
+import CommonCrypto
+import CoreNFC
+import CryptoKit
+import Foundation
+import OpenSSL
+@_exported import SanalogiReader
+import SmartCardIO
+import Swift
+import UIKit
+import Vision
+import libtesseract
+extension SwiftyTesseract {
+  public enum Error : Swift.Error {
+    case imageConversionError
+    case unableToExtractTextFromImage
+    case unableToCreateRenderer
+    case unableToBeginDocument
+    case unableToProcessPage
+    case unableToEndDocument
+    case unableToRetrieveIterator
+    public static func == (a: SanalogiReader.SwiftyTesseract.Error, b: SanalogiReader.SwiftyTesseract.Error) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+public enum ResultIteratorLevel : libtesseract.TessPageIteratorLevel.RawValue {
+  case block
+  case paragraph
+  case textline
+  case word
+  case symbol
+  public var tesseractLevel: libtesseract.TessPageIteratorLevel {
+    get
+  }
+  public typealias RawValue = libtesseract.TessPageIteratorLevel.RawValue
+  public init?(rawValue: libtesseract.TessPageIteratorLevel.RawValue)
+  public var rawValue: libtesseract.TessPageIteratorLevel.RawValue {
+    get
+  }
+}
+public struct RecognizedBlock {
+  public var text: Swift.String
+  public var boundingBox: CoreGraphics.CGRect
+  public var confidence: Swift.Float
+}
+public enum RecognitionLanguage {
+  case afrikaans
+  case albanian
+  case amharic
+  case arabic
+  case assamese
+  case azerbaijani
+  case azerbaijaniCyrillic
+  case basque
+  case belarusian
+  case bengali
+  case bosnian
+  case bulgarian
+  case burmese
+  case catalanAndValencian
+  case cebuano
+  case centralKhmer
+  case chineseSimplified
+  case chineseTraditional
+  case croatian
+  case czech
+  case cherokee
+  case danish
+  case dutchFlemish
+  case dzongkha
+  case english
+  case englishMiddle
+  case esperanto
+  case estonian
+  case finnish
+  case frankish
+  case french
+  case frenchMiddle
+  case galician
+  case georgian
+  case georgianOld
+  case german
+  case greekAncient
+  case greekModern
+  case guajarati
+  case haitian
+  case hebrew
+  case hindi
+  case hungarian
+  case icelandic
+  case inuktitut
+  case indonesian
+  case italian
+  case italianOld
+  case irish
+  case javanese
+  case japanese
+  case kannada
+  case kazakh
+  case korean
+  case kurdish
+  case kyrgyz
+  case lao
+  case latin
+  case lithuanian
+  case malayalam
+  case macedonian
+  case malay
+  case maltese
+  case marathi
+  case nepali
+  case norwegian
+  case oriya
+  case pashto
+  case persian
+  case polish
+  case portugese
+  case punjabi
+  case romanian
+  case russian
+  case sanskrit
+  case serbian
+  case serbianLatin
+  case sinhala
+  case slovak
+  case slovenian
+  case spanish
+  case spanishOld
+  case swahili
+  case swedish
+  case syriac
+  case tamil
+  case tagalog
+  case tajik
+  case telugu
+  case thai
+  case tibetan
+  case tigrinya
+  case turkish
+  case uighur
+  case ukrainian
+  case urdu
+  case uzbek
+  case uzbekCyrillic
+  case vietnamese
+  case welsh
+  case yiddish
+  case custom(Swift.String)
+}
+extension RecognitionLanguage : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup {
+  public var datagroupType: SanalogiReader.DataGroupId
+  public var body: [Swift.UInt8] {
+    get
+  }
+  public func hash(_ hashAlgorythm: Swift.String) -> [Swift.UInt8]
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class NotImplementedDG : SanalogiReader.DataGroup {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class COM : SanalogiReader.DataGroup {
+  public var version: Swift.String {
+    get
+  }
+  public var unicodeVersion: Swift.String {
+    get
+  }
+  public var dataGroupsPresent: [Swift.String] {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup1 : SanalogiReader.DataGroup {
+  public var elements: [Swift.String : Swift.String] {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup2 : SanalogiReader.DataGroup {
+  public var nrImages: Swift.Int {
+    get
+  }
+  public var versionNumber: Swift.Int {
+    get
+  }
+  public var lengthOfRecord: Swift.Int {
+    get
+  }
+  public var numberOfFacialImages: Swift.Int {
+    get
+  }
+  public var facialRecordDataLength: Swift.Int {
+    get
+  }
+  public var nrFeaturePoints: Swift.Int {
+    get
+  }
+  public var gender: Swift.Int {
+    get
+  }
+  public var eyeColor: Swift.Int {
+    get
+  }
+  public var hairColor: Swift.Int {
+    get
+  }
+  public var featureMask: Swift.Int {
+    get
+  }
+  public var expression: Swift.Int {
+    get
+  }
+  public var poseAngle: Swift.Int {
+    get
+  }
+  public var poseAngleUncertainty: Swift.Int {
+    get
+  }
+  public var faceImageType: Swift.Int {
+    get
+  }
+  public var imageDataType: Swift.Int {
+    get
+  }
+  public var imageWidth: Swift.Int {
+    get
+  }
+  public var imageHeight: Swift.Int {
+    get
+  }
+  public var imageColorSpace: Swift.Int {
+    get
+  }
+  public var sourceType: Swift.Int {
+    get
+  }
+  public var deviceType: Swift.Int {
+    get
+  }
+  public var quality: Swift.Int {
+    get
+  }
+  public var imageData: [Swift.UInt8] {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup7 : SanalogiReader.DataGroup {
+  public var imageData: [Swift.UInt8] {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup11 : SanalogiReader.DataGroup {
+  public var fullName: Swift.String? {
+    get
+  }
+  public var personalNumber: Swift.String? {
+    get
+  }
+  public var dateOfBirth: Swift.String? {
+    get
+  }
+  public var placeOfBirth: Swift.String? {
+    get
+  }
+  public var address: Swift.String? {
+    get
+  }
+  public var telephone: Swift.String? {
+    get
+  }
+  public var profession: Swift.String? {
+    get
+  }
+  public var title: Swift.String? {
+    get
+  }
+  public var personalSummary: Swift.String? {
+    get
+  }
+  public var proofOfCitizenship: Swift.String? {
+    get
+  }
+  public var tdNumbers: Swift.String? {
+    get
+  }
+  public var custodyInfo: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup12 : SanalogiReader.DataGroup {
+  public var issuingAuthority: Swift.String? {
+    get
+  }
+  public var dateOfIssue: Swift.String? {
+    get
+  }
+  public var otherPersonsDetails: Swift.String? {
+    get
+  }
+  public var endorsementsOrObservations: Swift.String? {
+    get
+  }
+  public var taxOrExitRequirements: Swift.String? {
+    get
+  }
+  public var frontImage: [Swift.UInt8]? {
+    get
+  }
+  public var rearImage: [Swift.UInt8]? {
+    get
+  }
+  public var personalizationTime: Swift.String? {
+    get
+  }
+  public var personalizationDeviceSerialNr: Swift.String? {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup14 : SanalogiReader.DataGroup {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class DataGroup15 : SanalogiReader.DataGroup {
+  public var rsaPublicKey: Swift.OpaquePointer? {
+    get
+  }
+  public var ecdsaPublicKey: Swift.UnsafeMutablePointer<OpenSSL.EVP_PKEY>? {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 13, *)
+public enum DocTypeEnum : Swift.String {
+  case TD1
+  case TD2
+  case OTHER
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Collection {
+  public subscript(safe index: Self.Index) -> Self.Iterator.Element? {
+    get
+  }
+}
+@available(iOS 13, *)
+public enum PassportTagError : Swift.Error {
+  case responseError(Swift.UInt8, Swift.UInt8)
+}
+@available(iOS 13, *)
+extension PassportTagError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@available(iOS 13, *)
+public enum TagError : Swift.Error {
+  case ResponseError(Swift.String, Swift.UInt8, Swift.UInt8)
+  case InvalidResponse
+  case UnexpectedError
+  case NFCNotSupported
+  case NoConnectedTag
+  case D087Malformed
+  case InvalidResponseChecksum
+  case MissingMandatoryFields
+  case CannotDecodeASN1Length
+  case InvalidASN1Value
+  case UnableToProtectAPDU
+  case UnableToUnprotectAPDU
+  case UnsupportedDataGroup
+  case DataGroupNotRead
+  case UnknownTag
+  case UnknownImageFormat
+  case NotImplemented
+  case TagNotValid
+  case ConnectionError
+  case UserCanceled
+  case InvalidMRZKey
+  case MoreThanOneTagFound
+}
+@available(iOS 13, *)
+public enum DataGroupId : Swift.Int, Swift.CaseIterable {
+  case COM
+  case DG1
+  case DG2
+  case DG3
+  case DG4
+  case DG5
+  case DG6
+  case DG7
+  case DG8
+  case DG9
+  case DG10
+  case DG11
+  case DG12
+  case DG13
+  case DG14
+  case DG15
+  case DG16
+  case SOD
+  case Unknown
+  public func getName() -> Swift.String
+  public static func getIDFromName(name: Swift.String) -> SanalogiReader.DataGroupId
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public typealias AllCases = [SanalogiReader.DataGroupId]
+  public static var allCases: [SanalogiReader.DataGroupId] {
+    get
+  }
+}
+@available(iOS 13, *)
+public struct ResponseAPDU {
+  public var data: [Swift.UInt8]
+  public var sw1: Swift.UInt8
+  public var sw2: Swift.UInt8
+  public init(data: [Swift.UInt8], sw1: Swift.UInt8, sw2: Swift.UInt8)
+}
+@_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class TagReader {
+  @objc deinit
+}
+@available(iOS 13, *)
+public class SecureMessaging {
+  public init(ksenc: [Swift.UInt8], ksmac: [Swift.UInt8], ssc: [Swift.UInt8])
+  @objc deinit
+}
+public enum OpenSSLError : Swift.Error {
+  case UnableToGetX509CertificateFromPKCS7(Swift.String)
+  case UnableToVerifyX509CertificateForSOD(Swift.String)
+  case UnableToGetSignedDataFromPKCS7(Swift.String)
+  case UnableToReadECPublicKey(Swift.String)
+  case UnableToExtractSignedDataFromPKCS7(Swift.String)
+  case UnableToParseASN1(Swift.String)
+}
+extension OpenSSLError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol MrzScannerViewDelegate : AnyObject {
+  func mrzScannerView(_ mrzScannerView: SanalogiReader.MrzScannerView, didFind scanResult: SanalogiReader.MrzScanResult)
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable public class MrzScannerView : UIKit.UIView {
+  @objc dynamic public var isScanning: Swift.Bool
+  public var vibrateOnResult: Swift.Bool
+  weak public var delegate: SanalogiReader.MrzScannerViewDelegate?
+  public var cutoutRect: CoreGraphics.CGRect {
+    get
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public func prepareForInterfaceBuilder()
+  @objc override dynamic public func layoutSubviews()
+  public func startScanning()
+  public func stopScanning()
+}
+extension MrzScannerView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+@available(iOS 13, *)
+public enum NFCViewDisplayMessage {
+  case requestPresentPassport
+  case authenticatingWithPassport(Swift.Int)
+  case readingDataGroupProgress(SanalogiReader.DataGroupId, Swift.Int)
+  case error(SanalogiReader.TagError)
+  case successfulRead
+}
+@available(iOS 13, *)
+extension NFCViewDisplayMessage {
+  public var description: Swift.String {
+    get
+  }
+}
+@objc @available(iOS 13, *)
+public class PassportReader : ObjectiveC.NSObject {
+  public init(masterListURL: Foundation.URL? = nil)
+  public func setMasterListURL(_ masterListURL: Foundation.URL)
+  public func readPassport(mrzKey: Swift.String, tags: [SanalogiReader.DataGroupId] = [], skipSecureElements: Swift.Bool = true, customDisplayMessage: ((SanalogiReader.NFCViewDisplayMessage) -> Swift.String?)? = nil, completed: @escaping (SanalogiReader.DocumentModel?, SanalogiReader.TagError?) -> ())
+  public func readPassportIpad(mrzKey: Swift.String, channel: SmartCardIO.CardChannel, tags: [SanalogiReader.DataGroupId] = [], skipSecureElements: Swift.Bool = true, completed: @escaping (SanalogiReader.DocumentModel?, SanalogiReader.TagError?) -> ())
+  @objc deinit
+  @objc override dynamic public init()
+}
+@available(iOS 13, *)
+extension PassportReader : CoreNFC.NFCTagReaderSessionDelegate {
+  public func tagReaderSessionDidBecomeActive(_ session: CoreNFC.NFCTagReaderSession)
+  public func tagReaderSession(_ session: CoreNFC.NFCTagReaderSession, didInvalidateWithError error: Swift.Error)
+  public func tagReaderSession(_ session: CoreNFC.NFCTagReaderSession, didDetect tags: [CoreNFC.NFCTag])
+}
+@_hasMissingDesignatedInitializers public class SwiftyTesseract {
+  public var whiteList: Swift.String? {
+    get
+    set
+  }
+  public var blackList: Swift.String? {
+    get
+    set
+  }
+  public var preserveInterwordSpaces: Swift.Bool? {
+    get
+    set
+  }
+  public var minimumCharacterHeight: Swift.Int? {
+    get
+    set
+  }
+  public var version: Swift.String? {
+    get
+  }
+  convenience public init(languages: [SanalogiReader.RecognitionLanguage], dataSource: SanalogiReader.LanguageModelDataSource = Bundle.main, engineMode: SanalogiReader.EngineMode = .lstmOnly)
+  convenience public init(language: SanalogiReader.RecognitionLanguage, dataSource: SanalogiReader.LanguageModelDataSource = Bundle.main, engineMode: SanalogiReader.EngineMode = .lstmOnly)
+  @available(*, deprecated, message: "migrate to init(language:dataSource:engineMode:)")
+  convenience public init(language: SanalogiReader.RecognitionLanguage, bundle: Foundation.Bundle = .main, engineMode: SanalogiReader.EngineMode = .lstmOnly)
+  @available(*, deprecated, message: "migrate to init(languages:dataSource:engineMode:)")
+  convenience public init(languages: [SanalogiReader.RecognitionLanguage], bundle: Foundation.Bundle = .main, engineMode: SanalogiReader.EngineMode = .lstmOnly)
+  @objc deinit
+}
+extension SwiftyTesseract {
+  @available(*, deprecated, message: "use performOCR(on:) or performOCRPublisher(on:)")
+  public func performOCR(on image: UIKit.UIImage, completionHandler: (Swift.String?) -> ())
+  public func performOCR(on image: UIKit.UIImage) -> Swift.Result<Swift.String, Swift.Error>
+  @available(iOS 13.0, *)
+  public func performOCRPublisher(on image: UIKit.UIImage) -> Combine.AnyPublisher<Swift.String, Swift.Error>
+}
+extension SwiftyTesseract {
+  public func createPDF(from images: [UIKit.UIImage]) throws -> Foundation.Data
+}
+extension SwiftyTesseract {
+  public func recognizedBlocks(for level: SanalogiReader.ResultIteratorLevel) -> Swift.Result<[SanalogiReader.RecognizedBlock], Swift.Error>
+}
+@_hasMissingDesignatedInitializers public class MrzScanResult {
+  final public let documentImage: UIKit.UIImage
+  final public let documentType: Swift.String
+  final public let countryCode: Swift.String
+  final public let surnames: Swift.String
+  final public let givenNames: Swift.String
+  final public let documentNumber: Swift.String
+  final public let nationality: Swift.String
+  final public let birthDate: Foundation.Date?
+  final public let sex: Swift.String?
+  final public let expiryDate: Foundation.Date?
+  final public let personalNumber: Swift.String
+  final public let personalNumber2: Swift.String?
+  final public let mrzString: Swift.String
+  public var faceImage: UIKit.UIImage? {
+    get
+  }
+  @objc deinit
+}
+public protocol NFCReaderDelegate : AnyObject {
+  @available(iOS 13, *)
+  func didSuccess(data: SanalogiReader.DocumentModel)
+  func didFail(message: Swift.String)
+}
+@_hasMissingDesignatedInitializers public class NFCReader {
+  public static let sharedInstance: SanalogiReader.NFCReader
+  weak public var delegate: SanalogiReader.NFCReaderDelegate?
+  public var description: Swift.String
+  public var getImageFromIpad: Swift.Bool
+  @available(iOS 13, *)
+  public func readChip()
+  @objc deinit
+}
+public enum LogLevel : Swift.Int {
+  case verbose
+  case debug
+  case info
+  case warning
+  case error
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Log {
+  public static var logLevel: SanalogiReader.LogLevel
+  public class func verbose(_ msg: Swift.String)
+  public class func debug(_ msg: Swift.String)
+  public class func info(_ msg: Swift.String)
+  public class func warning(_ msg: Swift.String)
+  public class func error(_ msg: Swift.String)
+  @objc deinit
+}
+public func binToHexRep(_ val: [Swift.UInt8]) -> Swift.String
+public func binToHexRep(_ val: Swift.UInt8) -> Swift.String
+public func binToHex(_ val: Swift.UInt8) -> Swift.Int
+public func binToHex(_ val: [Swift.UInt8]) -> Swift.UInt64
+public func binToHex(_ val: Swift.ArraySlice<Swift.UInt8>) -> Swift.UInt64
+public func hexToBin(_ val: Swift.UInt64) -> [Swift.UInt8]
+public func binToInt(_ val: Swift.ArraySlice<Swift.UInt8>) -> Swift.Int
+public func binToInt(_ val: [Swift.UInt8]) -> Swift.Int
+public func intToBin(_ data: Swift.Int, pad: Swift.Int = 2) -> [Swift.UInt8]
+public func hexRepToBin(_ val: Swift.String) -> [Swift.UInt8]
+public func xor(_ kifd: [Swift.UInt8], _ response_kicc: [Swift.UInt8]) -> [Swift.UInt8]
+public func generateRandomUInt8Array(_ size: Swift.Int) -> [Swift.UInt8]
+public func pad(_ toPad: [Swift.UInt8]) -> [Swift.UInt8]
+public func unpad(_ tounpad: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, *)
+public func mac(key: [Swift.UInt8], msg: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, *)
+public func asn1Length(_ data: Swift.ArraySlice<Swift.UInt8>) throws -> (Swift.Int, Swift.Int)
+@available(iOS 13, *)
+public func asn1Length(_ data: [Swift.UInt8]) throws -> (Swift.Int, Swift.Int)
+@available(iOS 13, *)
+public func toAsn1Length(_ data: Swift.Int) throws -> [Swift.UInt8]
+@available(iOS 13, *)
+public func tripleDESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, *)
+public func tripleDESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13, *)
+public func DESEncrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
+@available(iOS 13, *)
+public func DESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UInt8], options: Swift.UInt32 = 0) -> [Swift.UInt8]
+public enum EngineMode : libtesseract.TessOcrEngineMode.RawValue {
+  case tesseractOnly
+  case lstmOnly
+  case tesseractLstmCombined
+  public typealias RawValue = libtesseract.TessOcrEngineMode.RawValue
+  public var rawValue: libtesseract.TessOcrEngineMode.RawValue {
+    get
+  }
+  public init?(rawValue: libtesseract.TessOcrEngineMode.RawValue)
+}
+extension Bundle : SanalogiReader.LanguageModelDataSource {
+  public var pathToTrainedData: Swift.String {
+    get
+  }
+}
+public protocol LanguageModelDataSource {
+  var pathToTrainedData: Swift.String { get }
+}
+@available(iOS 13, *)
+public struct DataGroupHash {
+  public var id: Swift.String
+  public var sodHash: Swift.String
+  public var computedHash: Swift.String
+  public var match: Swift.Bool
+}
+@available(iOS 13, *)
+public class DocumentModel {
+  public var documentType: Swift.String {
+    get
+  }
+  public var documentSubType: Swift.String {
+    get
+  }
+  public var personalNumber: Swift.String {
+    get
+  }
+  public var documentNumber: Swift.String {
+    get
+  }
+  public var issuingAuthority: Swift.String {
+    get
+  }
+  public var documentExpiryDate: Swift.String {
+    get
+  }
+  public var dateOfBirth: Swift.String {
+    get
+  }
+  public var gender: Swift.String {
+    get
+  }
+  public var nationality: Swift.String {
+    get
+  }
+  public var lastName: Swift.String {
+    get
+    set
+  }
+  public var firstName: Swift.String {
+    get
+    set
+  }
+  public var LDSVersion: Swift.String {
+    get
+  }
+  public var dataGroupsPresent: [Swift.String] {
+    get
+  }
+  public var dataGroupsAvailable: [SanalogiReader.DataGroupId] {
+    get
+  }
+  public var dataGroupsRead: [SanalogiReader.DataGroupId : SanalogiReader.DataGroup] {
+    get
+  }
+  public var dataGroupHashes: [SanalogiReader.DataGroupId : SanalogiReader.DataGroupHash] {
+    get
+  }
+  public var passportCorrectlySigned: Swift.Bool {
+    get
+  }
+  public var documentSigningCertificateVerified: Swift.Bool {
+    get
+  }
+  public var passportDataNotTampered: Swift.Bool {
+    get
+  }
+  public var activeAuthenticationPassed: Swift.Bool {
+    get
+  }
+  public var verificationErrors: [Swift.Error] {
+    get
+  }
+  public var passportImage: UIKit.UIImage? {
+    get
+  }
+  public var signatureImage: UIKit.UIImage? {
+    get
+  }
+  public var activeAuthenticationSupported: Swift.Bool {
+    get
+  }
+  public init()
+  public func addDataGroup(_ id: SanalogiReader.DataGroupId, dataGroup: SanalogiReader.DataGroup)
+  public func getDataGroup(_ id: SanalogiReader.DataGroupId) -> SanalogiReader.DataGroup?
+  public func getHashesForDatagroups(hashAlgorythm: Swift.String) -> [SanalogiReader.DataGroupId : [Swift.UInt8]]
+  public func verifyPassport(masterListURL: Foundation.URL?)
+  public func verifyActiveAuthentication(challenge: [Swift.UInt8], signature: [Swift.UInt8])
+  @objc deinit
+}
+@available(iOS 13, *)
+public class BACHandler {
+  public var ksenc: [Swift.UInt8]
+  public var ksmac: [Swift.UInt8]
+  public var kifd: [Swift.UInt8]
+  public init()
+  public init(tagReader: SanalogiReader.TagReader)
+  public func performBACAndGetSessionKeys(mrzKey: Swift.String, completed: @escaping (SanalogiReader.TagError?) -> ())
+  public func performBACAndGetSessionKeysForIpad(mrzKey: Swift.String, completed: @escaping (SanalogiReader.TagError?) -> ())
+  public func sessionKeys(data: [Swift.UInt8]) -> ([Swift.UInt8], [Swift.UInt8], [Swift.UInt8])
+  @objc deinit
+}
+extension SanalogiReader.SwiftyTesseract.Error : Swift.Equatable {}
+extension SanalogiReader.SwiftyTesseract.Error : Swift.Hashable {}
+extension SanalogiReader.ResultIteratorLevel : Swift.Equatable {}
+extension SanalogiReader.ResultIteratorLevel : Swift.Hashable {}
+extension SanalogiReader.ResultIteratorLevel : Swift.RawRepresentable {}
+@available(iOS 13, *)
+extension SanalogiReader.DocTypeEnum : Swift.Equatable {}
+@available(iOS 13, *)
+extension SanalogiReader.DocTypeEnum : Swift.Hashable {}
+@available(iOS 13, *)
+extension SanalogiReader.DocTypeEnum : Swift.RawRepresentable {}
+@available(iOS 13, *)
+extension SanalogiReader.DataGroupId : Swift.Equatable {}
+@available(iOS 13, *)
+extension SanalogiReader.DataGroupId : Swift.Hashable {}
+@available(iOS 13, *)
+extension SanalogiReader.DataGroupId : Swift.RawRepresentable {}
+extension SanalogiReader.LogLevel : Swift.Equatable {}
+extension SanalogiReader.LogLevel : Swift.Hashable {}
+extension SanalogiReader.LogLevel : Swift.RawRepresentable {}
+extension SanalogiReader.EngineMode : Swift.Equatable {}
+extension SanalogiReader.EngineMode : Swift.Hashable {}
+extension SanalogiReader.EngineMode : Swift.RawRepresentable {}

@@ -22,6 +22,9 @@ Project deployment version must be iOS11 or higher
 ## 1: Add frameworks to your project
 
 ```
+You can download frameworks files from:http://login.nfcread.com/files/frameworks.zip
+Extract zip and embed&sign below frameworks
+
 1. SanalogiReader.xcframework 
 2. ACSSmartCardIO.xcframework
 3. SmartCardIO.xcframework

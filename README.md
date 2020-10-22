@@ -22,8 +22,8 @@ Project deployment version must be iOS11 or higher
 ## 1: Add frameworks to your project
 
 ```
-You can download frameworks files from:http://login.nfcread.com/files/frameworks.zip
-Extract zip and embed&sign below frameworks
+You can download framework files from:https://login.nfcread.com/files/SanalogiReader.zip and https://login.nfcread.com/files/SanalogiReader.zip
+Extract zips and embed&sign below frameworks
 
 1. SanalogiReader.xcframework 
 2. ACSSmartCardIO.xcframework
@@ -33,6 +33,8 @@ Extract zip and embed&sign below frameworks
 
 ```
 Go to "General -> Frameworks, Libraries and Embedded Content" and make the added frameworks "Embed & Sign"
+
+Be sure that when adding frameworks: General->Frameworks,Libraries and Embedded content
 ```
 
 ## 2: Simply add the following line to your Podfile:
@@ -78,6 +80,8 @@ DELETE “Item 0 (Near Field Communication Tag Reading Session Format) - NFC Dat
 Only the item listed below should remain.
 ```
 Item 1 (Near Field Communication Tag Reading Session Format) - NFC tag-specific data protocol
+
+After doing that open entitlement as source code and add this line <string>NDEF</string> after <string>TAG</string> line.
 ```
 
 ## 6: To read from the camera
@@ -168,6 +172,11 @@ class ViewController: UIViewController,NFCReaderDelegate {
 }
 
 ```
+## 8. Add RunScript To BuildPhase
+```
+rm -rf "$(find $CODESIGNING_FOLDER_PATH -name 'libtesseract.framework')"
+```
+
 ## For ENABLE_BITCODE issue
 
 ```
@@ -208,5 +217,10 @@ public class DocumentModel{
     public lazy var lastName : String
     public lazy var firstName : String
     public var passportImage : UIImage
+    public var issueDate:String?
+    public var placeOfBirth:String?
+    public var address:String?    
+    public var telephone:String? 
+    public var profession:String? 
 }
 ```

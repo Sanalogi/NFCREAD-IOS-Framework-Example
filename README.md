@@ -107,6 +107,8 @@ class MrzController: UIViewController,MrzScannerViewDelegate {
         
         scannerView.delegate = self
         NFCReader.sharedInstance.description = "NFCREAD-CameraScan"
+	//NFCReader.sharedInstance.lang = "tr" or
+	//NFCReader.sharedInstance.lang = "en" default tr
     }
     
     override func viewWillAppear(_ animated: Bool) {

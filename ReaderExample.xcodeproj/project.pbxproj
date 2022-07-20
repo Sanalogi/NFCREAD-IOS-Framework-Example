@@ -14,16 +14,16 @@
 		36E08EA724EE5B58006FD1DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E08EA624EE5B58006FD1DA /* Assets.xcassets */; };
 		36E08EAA24EE5B58006FD1DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E08EA824EE5B58006FD1DA /* LaunchScreen.storyboard */; };
 		36E08EC024EE6858006FD1DA /* MrzController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E08EBF24EE6858006FD1DA /* MrzController.swift */; };
-		A69D6B92C3EE8147976C7B7B /* Pods_ReaderExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567D4FB2F6E3FFC51BDC585C /* Pods_ReaderExample.framework */; };
+		4A89363A28528E2500822959 /* ACSSmartCardIO.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89363928528E2500822959 /* ACSSmartCardIO.xcframework */; };
+		4A89363B28528E2500822959 /* ACSSmartCardIO.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89363928528E2500822959 /* ACSSmartCardIO.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A89363E28528E3F00822959 /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89363D28528E3F00822959 /* libtesseract.xcframework */; };
+		4A89363F28528E3F00822959 /* libtesseract.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89363D28528E3F00822959 /* libtesseract.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A89364128528E4C00822959 /* SmartCardIO.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89364028528E4C00822959 /* SmartCardIO.xcframework */; };
+		4A89364228528E4C00822959 /* SmartCardIO.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89364028528E4C00822959 /* SmartCardIO.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A8936472852906B00822959 /* ViewControllerFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8936462852906B00822959 /* ViewControllerFirst.swift */; };
+		4AF1F693288778A800BF83B8 /* SanalogiReader.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89EB0628636DD500C9F252 /* SanalogiReader.xcframework */; };
+		4AF1F694288778A800BF83B8 /* SanalogiReader.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A89EB0628636DD500C9F252 /* SanalogiReader.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB0CABFF252717AA00E18B6F /* MrzResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0CABFE252717AA00E18B6F /* MrzResultController.swift */; };
-		EB2D2276253F9912008E3956 /* libtesseract.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D2272253F9912008E3956 /* libtesseract.xcframework */; };
-		EB2D2277253F9912008E3956 /* libtesseract.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D2272253F9912008E3956 /* libtesseract.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EB2D2278253F9912008E3956 /* ACSSmartCardIO.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D2273253F9912008E3956 /* ACSSmartCardIO.xcframework */; };
-		EB2D2279253F9912008E3956 /* ACSSmartCardIO.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D2273253F9912008E3956 /* ACSSmartCardIO.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EB2D227A253F9912008E3956 /* SmartCardIO.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D2274253F9912008E3956 /* SmartCardIO.xcframework */; };
-		EB2D227B253F9912008E3956 /* SmartCardIO.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D2274253F9912008E3956 /* SmartCardIO.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EB454FE62550AD9A00462EB6 /* SanalogiReader.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB454FE52550AD9A00462EB6 /* SanalogiReader.xcframework */; };
-		EB454FE72550AD9A00462EB6 /* SanalogiReader.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB454FE52550AD9A00462EB6 /* SanalogiReader.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +33,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EB2D2277253F9912008E3956 /* libtesseract.xcframework in Embed Frameworks */,
-				EB2D2279253F9912008E3956 /* ACSSmartCardIO.xcframework in Embed Frameworks */,
-				EB454FE72550AD9A00462EB6 /* SanalogiReader.xcframework in Embed Frameworks */,
-				EB2D227B253F9912008E3956 /* SmartCardIO.xcframework in Embed Frameworks */,
+				4A89363F28528E3F00822959 /* libtesseract.xcframework in Embed Frameworks */,
+				4A89363B28528E2500822959 /* ACSSmartCardIO.xcframework in Embed Frameworks */,
+				4AF1F694288778A800BF83B8 /* SanalogiReader.xcframework in Embed Frameworks */,
+				4A89364228528E4C00822959 /* SmartCardIO.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +44,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F40554F31BD917F237A1408 /* Pods-ReaderExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderExample.debug.xcconfig"; path = "Target Support Files/Pods-ReaderExample/Pods-ReaderExample.debug.xcconfig"; sourceTree = "<group>"; };
 		36E08E9A24EE5B54006FD1DA /* ReaderExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReaderExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E08E9D24EE5B54006FD1DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36E08E9F24EE5B54006FD1DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,13 +54,16 @@
 		36E08EAB24EE5B58006FD1DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36E08EBE24EE661C006FD1DA /* ReaderExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReaderExample.entitlements; sourceTree = "<group>"; };
 		36E08EBF24EE6858006FD1DA /* MrzController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrzController.swift; sourceTree = "<group>"; };
-		5500C9368755F4252017890A /* Pods-ReaderExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderExample.release.xcconfig"; path = "Target Support Files/Pods-ReaderExample/Pods-ReaderExample.release.xcconfig"; sourceTree = "<group>"; };
-		567D4FB2F6E3FFC51BDC585C /* Pods_ReaderExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReaderExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A4BE807286F76350075C9F1 /* SanalogiReader.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SanalogiReader.xcframework; path = "../../w/ios/NFCREAD-IOS-Framework/build/SanalogiReader.xcframework"; sourceTree = "<group>"; };
+		4A89363928528E2500822959 /* ACSSmartCardIO.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ACSSmartCardIO.xcframework; path = ../../../Desktop/SideFrameworks/ACSSmartCardIO.xcframework; sourceTree = "<group>"; };
+		4A89363D28528E3F00822959 /* libtesseract.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtesseract.xcframework; path = ../../../Desktop/SideFrameworks/libtesseract.xcframework; sourceTree = "<group>"; };
+		4A89364028528E4C00822959 /* SmartCardIO.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SmartCardIO.xcframework; path = ../../../Desktop/SideFrameworks/SmartCardIO.xcframework; sourceTree = "<group>"; };
+		4A8936462852906B00822959 /* ViewControllerFirst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFirst.swift; sourceTree = "<group>"; };
+		4A89EB0628636DD500C9F252 /* SanalogiReader.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SanalogiReader.xcframework; path = "../../project/IOS/NFCREAD-IOS-Framework/build/SanalogiReader.xcframework"; sourceTree = "<group>"; };
+		4AC651DB2852C86E005BBF94 /* SanalogiReader.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SanalogiReader.xcframework; path = "../../../../../Volumes/Untitled/Project/NFCREAD-IOS-Framework/build/SanalogiReader.xcframework"; sourceTree = "<group>"; };
+		AD4A1C5BAD606323E6E98230 /* Pods-ReaderExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderExample.release.xcconfig"; path = "Target Support Files/Pods-ReaderExample/Pods-ReaderExample.release.xcconfig"; sourceTree = "<group>"; };
+		DFE5CC234A2DFBA342662A17 /* Pods-ReaderExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderExample.debug.xcconfig"; path = "Target Support Files/Pods-ReaderExample/Pods-ReaderExample.debug.xcconfig"; sourceTree = "<group>"; };
 		EB0CABFE252717AA00E18B6F /* MrzResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrzResultController.swift; sourceTree = "<group>"; };
-		EB2D2272253F9912008E3956 /* libtesseract.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtesseract.xcframework; path = ../../Desktop/libtesseract.xcframework; sourceTree = "<group>"; };
-		EB2D2273253F9912008E3956 /* ACSSmartCardIO.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ACSSmartCardIO.xcframework; path = ../../Desktop/ACSSmartCardIO.xcframework; sourceTree = "<group>"; };
-		EB2D2274253F9912008E3956 /* SmartCardIO.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SmartCardIO.xcframework; path = ../../Desktop/SmartCardIO.xcframework; sourceTree = "<group>"; };
-		EB454FE52550AD9A00462EB6 /* SanalogiReader.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SanalogiReader.xcframework; path = ../../Desktop/SanalogiReader.xcframework; sourceTree = "<group>"; };
 		EB6AC8EC252640A5003106C0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -70,11 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB454FE62550AD9A00462EB6 /* SanalogiReader.xcframework in Frameworks */,
-				EB2D2276253F9912008E3956 /* libtesseract.xcframework in Frameworks */,
-				A69D6B92C3EE8147976C7B7B /* Pods_ReaderExample.framework in Frameworks */,
-				EB2D2278253F9912008E3956 /* ACSSmartCardIO.xcframework in Frameworks */,
-				EB2D227A253F9912008E3956 /* SmartCardIO.xcframework in Frameworks */,
+				4A89364128528E4C00822959 /* SmartCardIO.xcframework in Frameworks */,
+				4A89363E28528E3F00822959 /* libtesseract.xcframework in Frameworks */,
+				4AF1F693288778A800BF83B8 /* SanalogiReader.xcframework in Frameworks */,
+				4A89363A28528E2500822959 /* ACSSmartCardIO.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +112,7 @@
 				36E08EA824EE5B58006FD1DA /* LaunchScreen.storyboard */,
 				36E08EAB24EE5B58006FD1DA /* Info.plist */,
 				36E08EBF24EE6858006FD1DA /* MrzController.swift */,
+				4A8936462852906B00822959 /* ViewControllerFirst.swift */,
 				EB0CABFE252717AA00E18B6F /* MrzResultController.swift */,
 			);
 			path = ReaderExample;
@@ -119,8 +121,8 @@
 		9D7FA3359BCDB6FF5C8C708D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2F40554F31BD917F237A1408 /* Pods-ReaderExample.debug.xcconfig */,
-				5500C9368755F4252017890A /* Pods-ReaderExample.release.xcconfig */,
+				DFE5CC234A2DFBA342662A17 /* Pods-ReaderExample.debug.xcconfig */,
+				AD4A1C5BAD606323E6E98230 /* Pods-ReaderExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -128,12 +130,13 @@
 		EF437C6B06C2A7B149B6687A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB454FE52550AD9A00462EB6 /* SanalogiReader.xcframework */,
-				EB2D2273253F9912008E3956 /* ACSSmartCardIO.xcframework */,
-				EB2D2272253F9912008E3956 /* libtesseract.xcframework */,
-				EB2D2274253F9912008E3956 /* SmartCardIO.xcframework */,
+				4AC651DB2852C86E005BBF94 /* SanalogiReader.xcframework */,
+				4A89EB0628636DD500C9F252 /* SanalogiReader.xcframework */,
+				4A4BE807286F76350075C9F1 /* SanalogiReader.xcframework */,
+				4A89364028528E4C00822959 /* SmartCardIO.xcframework */,
+				4A89363D28528E3F00822959 /* libtesseract.xcframework */,
+				4A89363928528E2500822959 /* ACSSmartCardIO.xcframework */,
 				EB6AC8EC252640A5003106C0 /* Accelerate.framework */,
-				567D4FB2F6E3FFC51BDC585C /* Pods_ReaderExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,13 +148,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36E08EAE24EE5B58006FD1DA /* Build configuration list for PBXNativeTarget "ReaderExample" */;
 			buildPhases = (
-				3232094C363E91004DC93FDB /* [CP] Check Pods Manifest.lock */,
+				F8D1D68FC51BD2F2236B996B /* [CP] Check Pods Manifest.lock */,
 				36E08E9624EE5B54006FD1DA /* Sources */,
 				36E08E9724EE5B54006FD1DA /* Frameworks */,
 				36E08E9824EE5B54006FD1DA /* Resources */,
-				205E7A4269D461AA7791C0E2 /* [CP] Embed Pods Frameworks */,
 				36E08EB724EE64C5006FD1DA /* Embed Frameworks */,
 				EB2D2271253F98BC008E3956 /* ShellScript */,
+				A70E64842D4D47BD502C480F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Can Samet KATKAT";
 				TargetAttributes = {
 					36E08E9924EE5B54006FD1DA = {
@@ -209,7 +212,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		205E7A4269D461AA7791C0E2 /* [CP] Embed Pods Frameworks */ = {
+		A70E64842D4D47BD502C480F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,7 +229,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReaderExample/Pods-ReaderExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3232094C363E91004DC93FDB /* [CP] Check Pods Manifest.lock */ = {
+		EB2D2271253F98BC008E3956 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nrm -rf \"$(find $CODESIGNING_FOLDER_PATH -name 'libtesseract.framework')\"\n\n";
+		};
+		F8D1D68FC51BD2F2236B996B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,23 +268,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB2D2271253F98BC008E3956 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nrm -rf \"$(find $CODESIGNING_FOLDER_PATH -name 'libtesseract.framework')\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,6 +280,7 @@
 				36E08EA024EE5B54006FD1DA /* SceneDelegate.swift in Sources */,
 				36E08EC024EE6858006FD1DA /* MrzController.swift in Sources */,
 				EB0CABFF252717AA00E18B6F /* MrzResultController.swift in Sources */,
+				4A8936472852906B00822959 /* ViewControllerFirst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +332,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -352,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -388,6 +393,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -406,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -418,14 +424,16 @@
 		};
 		36E08EAF24EE5B58006FD1DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40554F31BD917F237A1408 /* Pods-ReaderExample.debug.xcconfig */;
+			baseConfigurationReference = DFE5CC234A2DFBA342662A17 /* Pods-ReaderExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = ReaderExample/ReaderExample.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 13;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q7CR86YD76;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,6 +445,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = app.demo.sanalogi.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -446,14 +456,16 @@
 		};
 		36E08EB024EE5B58006FD1DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5500C9368755F4252017890A /* Pods-ReaderExample.release.xcconfig */;
+			baseConfigurationReference = AD4A1C5BAD606323E6E98230 /* Pods-ReaderExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = ReaderExample/ReaderExample.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 13;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q7CR86YD76;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,6 +477,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = app.demo.sanalogi.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

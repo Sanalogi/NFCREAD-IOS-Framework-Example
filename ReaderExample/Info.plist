@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>ReaderCustomerDemo</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -31,7 +33,7 @@ We need to access NFC for scan passport.</string>
 	<key>NSCameraUsageDescription</key>
 	<string> We need to access camera.</string>
 	<key>SanalogiReaderToken</key>
-	<string>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjM2IiwiaHR0cDovL3d3dy5zYW5hbG9naS5jb20vaWRlbnRpdHkvY2xhaW1zL0FwcGxpY2F0aW9uTmFtZSI6ImNvbS5zYW5hbG9naS5SZWFkZXJFeGFtcGxlIiwiaHR0cDovL3d3dy5zYW5hbG9naS5jb20vaWRlbnRpdHkvY2xhaW1zL1BsYXRmb3JtIjoiSU9TIiwiaXNzIjoiU2FuYWxvZ1Rva2VucyIsImF1ZCI6IlNhbmFsb2dUb2tlbnMifQ.QUMqbylLRkezDhwnTrwcEPb5rd-HX8OgTIig0XvjsdQ</string>
+	<string>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjI5NiIsImh0dHA6Ly93d3cuc2FuYWxvZ2kuY29tL2lkZW50aXR5L2NsYWltcy9BcHBsaWNhdGlvbk5hbWUiOiJhcHAuZGVtby5zYW5hbG9naS5jb20iLCJodHRwOi8vd3d3LnNhbmFsb2dpLmNvbS9pZGVudGl0eS9jbGFpbXMvUGxhdGZvcm0iOiJJT1MiLCJpc3MiOiJTYW5hbG9nVG9rZW5zIiwiYXVkIjoiU2FuYWxvZ1Rva2VucyJ9.49qRsOPEBNw3NXw3Eq-KVyDzIyQP6wytvuom9XQjSIg</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

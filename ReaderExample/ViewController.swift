@@ -13,6 +13,14 @@ import SanalogiReader
 
 @available(iOS 13, *)
 class ViewController: UIViewController,NFCReaderDelegate {
+    func resultScanner(didFind result: MrzScanResult) {
+        
+    }
+    
+    func resultPassportData(didFind result: MrzScanPassportResult) {
+        
+    }
+    
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var docNo: UILabel!
     @IBOutlet weak var countryCode: UILabel!
@@ -27,7 +35,7 @@ class ViewController: UIViewController,NFCReaderDelegate {
         str += "DocNo: " + data.documentNumber + "\n"
         str += "issuingAuthority: " + data.issuingAuthority + "\n"
         str += "docExpDate: " + data.documentExpiryDate + "\n"
-        str += "DateOfBirth: " + data.dateOfBirth + "\n"
+        str += "DateOfBirth: " + data.dateOfBirth! + "\n"
         str += "Gender: " + data.gender + "\n"
         str += "Nationality: " + data.nationality + "\n"
         str += "issueDate: " + (data.issueDate ?? "") + "\n"

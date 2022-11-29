@@ -23,7 +23,7 @@ Project deployment version must be iOS11 or higher
 ## 1: Add frameworks to your project
 
 ```
-You can download framework files from: https://login.nfcread.com/files/V1-1-9-SanalogiReader.zip and 
+You can download framework files from: https://login.nfcread.com/files/V1-1-8-SanalogiReader.zip and 
 https://login.nfcread.com/files/SideFrameworks.zip
 Extract zips and embed&sign below frameworks
 

@@ -16,22 +16,26 @@ NFC Read is a tool designed for reading and verifying the official documents suc
 ```
 DO NOT FORGET
 NFC operation works on devices with iOS13 and higher
-OCR scanning works iOS11 and higher versions
-Project deployment version must be iOS11 or higher
+Project deployment version must be iOS13 or higher
 ```
 
-## 1: Add frameworks to your project
+
+## 1: Simply add the following line to your Podfile:
+
+```ruby
+pod 'OpenSSL-Universal'
+```
+
+## 2: Add frameworks to your project
 
 ```
-You can download framework files from: https://login.nfcread.com/files/V1-1-8-SanalogiReader.zip and 
-https://login.nfcread.com/files/SideFrameworks.zip
+You can download framework files from: https://login.nfcread.com/files/SanalogiReader-01.zip and 
 Extract zips and embed&sign below frameworks
 
 1. SanalogiReader.xcframework 
-2. ACSSmartCardIO.xcframework
-3. SmartCardIO.xcframework
-4. Libtesseract.xcframework
+
 ```
+![alt text](https://github.com/abbasamini/Sample-App-For-SDK/blob/main/Image/Screen%20Shot%202023-04-06%20at%201.30.42%20AM.png?raw=true)
 
 ```
 Go to "General -> Frameworks, Libraries and Embedded Content" and make the added frameworks "Embed & Sign"
@@ -39,11 +43,6 @@ Go to "General -> Frameworks, Libraries and Embedded Content" and make the added
 Be sure that when adding frameworks: General->Frameworks,Libraries and Embedded content
 ```
 
-## 2: Simply add the following line to your Podfile:
-
-```ruby
-pod 'OpenSSL-Universal/Framework'
-```
 
 ## 3: Permissions
 
@@ -59,12 +58,6 @@ pod 'OpenSSL-Universal/Framework'
 	
 <key>NFCReaderUsageDescription</key>
 <string> We need to access NFC for scan passport.</string>
-	
-<key>NSBluetoothPeripheralUsageDescription</key>
-<string>$(PRODUCT_NAME) would like to use Bluetooth to connect NFC readers.</string>
-	
-<key>NSBluetoothAlwaysUsageDescription</key>
-<string>$(PRODUCT_NAME) would like to use Bluetooth to connect NFC readers.</string>
  
 ```
 ## 4: You must add the api key to the plist.([How can i get licence key?](https://nfcread.com))
@@ -73,9 +66,10 @@ pod 'OpenSSL-Universal/Framework'
   <key>SanalogiReaderToken</key>
   <string>LICENCEKEY</string>
 ```
-
+![alt text](https://github.com/abbasamini/Sample-App-For-SDK/blob/main/Image/Screen%20Shot%202023-04-06%20at%201.30.18%20AM.png?raw=true)
 ## 5: Include NFC in your project
 Select "Signing & Capabilities -> Capability-> Near Field Communication Tag Reading" and then remove the first item from the "entitlements" file created under the project.
+![alt text](https://github.com/abbasamini/Sample-App-For-SDK/blob/main/Image/Screen%20Shot%202023-04-06%20at%201.30.28%20AM.png?raw=true)
 ```
 DELETE “Item 0 (Near Field Communication Tag Reading Session Format) - NFC Data Exchange Format “
 ```
@@ -89,46 +83,43 @@ After doing that open entitlement as source code and add this line <string>NDEF<
 ## 6: To read from the camera
 
 ```
-1. Create a viewcontroller in the storyboard and add a view inside
-2. Write "MrzScannerView" in the Class field in the Custom Class part of the View and "SanalogiReader" in the Module.
-3. Cover the page by giving constraits.
+1. Create a viewcontroller
+
 ```
 You can review the sample code for the controls.
 ```swift
 import UIKit
-import SanalogiReader
+import NFCReaderApple
 
-class MrzController: UIViewController,MrzScannerViewDelegate {
+class ViewController: UIViewController,CardAndPassportDetectionViewControllerDelegate {
+    func didFail(message: String) {
+        
+    }
     
-    @IBOutlet weak var scannerView: MrzScannerView!
-    
-
+    func cardAndPassportDetectionViewController(_ viewController: CardAndPassportDetectionViewController, didDetectCard mrzScanResult: MrzScanResult, withSettings settings: CardAndPassportDetectionSettings) {
+ 	print(mrzScanResult.givenNames)
+        print(mrzScanResult.birthDate)
+        print(mrzScanResult.surnames)
+        print(mrzScanResult.documentNumber)
+        print(mrzScanResult.personalNumber)
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scannerView.delegate = self
-        NFCReader.sharedInstance.description = "NFCREAD-CameraScan"
-	//NFCReader.sharedInstance.lang = "tr" or
-	//NFCReader.sharedInstance.lang = "en" default tr
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-   //Start scanning
-        scannerView.startScanning()
-    }
-     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
 
-	//Stop scanning
-        scannerView.stopScanning()
     }
-
-    func mrzScannerView(_ mrzScannerView: MrzScannerView, didFind scanResult: MrzScanResult) {
-                //print(scanResult.surnames)
+    @IBAction func scanner(_ sender: Any) {
+        let settings = CardAndPassportDetectionSettings()
+        settings.passportMode = false
+        let controller = CardAndPassportDetectionViewController(settings: settings)
+        controller.delegate = self
+        self.present(controller, animated: true)
     }
+    
      
 }
 
@@ -137,55 +128,36 @@ class MrzController: UIViewController,MrzScannerViewDelegate {
 
 You can review the sample code to start reading from NFC.
 
-Getting image from iPad with external card reader can take time you can enable or disable to get image from iPad before readChip
-
-```swift
-    NFCReader.sharedInstance.getImageFromIpad = true//false
-```
 ```swift
 import UIKit
 #if canImport(CoreNFC)
-import SanalogiReader
-#endif
+import NFCReaderApple
+
 
 @available(iOS 13, *)
 
 class ViewController: UIViewController,NFCReaderDelegate {
-    func didSuccess(data: DocumentModel) {
-        //print(data.lastName)
-        //print(data.firstName)
-        
+
+     func didSuccess(data: NFCReaderApple.NFCPassportModel) {
+       
     }
+    
     
     func didFail(message: String) {
-        //print(message)
-    }
     
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NFCReader.sharedInstance.delegate = self
     }
 
     @IBAction func scan(_ sender: Any) {
-        
-	//start nfc reading
         NFCReader.sharedInstance.readChip()
     }
     
 }
 
-```
-## 8. Add RunScript To BuildPhase
-```
-rm -rf "$(find $CODESIGNING_FOLDER_PATH -name 'libtesseract.framework')"
-```
 
-## For ENABLE_BITCODE issue
-
-```
-Build Settings (All selected) -> Enable Bitcode = no
-```
 
 OCR Result Model
 

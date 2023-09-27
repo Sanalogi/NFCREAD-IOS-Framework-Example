@@ -29,7 +29,7 @@ pod 'OpenSSL-Universal'
 ## 2: Add frameworks to your project
 
 ```
-You can download framework files from: https://login.nfcread.com/files/SanalogiReader-02.zip and 
+You can download framework files from: https://login.nfcread.com/files/SanalogiReader-03.zip and 
 Extract zips and embed&sign below frameworks
 
 1. SanalogiReader.xcframework 
@@ -113,7 +113,7 @@ class ViewController: UIViewController,CardAndPassportDetectionViewControllerDel
 
     }
     @IBAction func scanner(_ sender: Any) {
-        let settings = CardAndPassportDetectionSettings()
+        let settings = CardAndPassportDetectionSettings(lang: "en") //default tr
         settings.passportMode = false
         settings.titleString = "Set Title"
         settings.descriptionString = "Set Description"

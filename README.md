@@ -29,7 +29,7 @@ pod 'OpenSSL-Universal'
 ## 2: Add frameworks to your project
 
 ```
-You can download framework files from: https://login.nfcread.com/files/SanalogiReader-03.zip and 
+You can download framework files from: https://login.nfcread.com/files/SanalogiReader-03-2.zip and 
 Extract zips and embed&sign below frameworks
 
 1. SanalogiReader.xcframework 

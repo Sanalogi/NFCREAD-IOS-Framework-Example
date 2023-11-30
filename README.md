@@ -79,7 +79,20 @@ Item 1 (Near Field Communication Tag Reading Session Format) - NFC tag-specific 
 
 After doing that open entitlement as source code and add this line <string>NDEF</string> after <string>TAG</string> line.
 ```
+## 6: Add library dependency
+```
+Download library dependecy
 
+```
+![alt text](https://login.nfcread.com/files/lib.zip)
+![alt text](https://login.nfcread.com/files/tessdata.zip)
+```
+exteract zip file and move lib file to project(drag and drop folder to Frameworks ,Library and Embedded Content)
+
+
+move tessdata to root folder project
+
+```
 ## 6: To read from the camera
 
 ```

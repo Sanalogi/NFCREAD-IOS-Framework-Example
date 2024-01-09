@@ -35,7 +35,6 @@ Extract zips and embed&sign below frameworks
 1. SanalogiReader.xcframework 
 
 ```
-![alt text](https://github.com/abbasamini/Sample-App-For-SDK/blob/main/Image/Screen%20Shot%202023-04-06%20at%201.30.42%20AM.png?raw=true)
 
 ```
 Go to "General -> Frameworks, Libraries and Embedded Content" and make the added frameworks "Embed & Sign"
@@ -66,10 +65,8 @@ Be sure that when adding frameworks: General->Frameworks,Libraries and Embedded 
   <key>SanalogiReaderToken</key>
   <string>LICENCEKEY</string>
 ```
-![alt text](https://github.com/abbasamini/Sample-App-For-SDK/blob/main/Image/Screen%20Shot%202023-04-06%20at%201.30.18%20AM.png?raw=true)
 ## 5: Include NFC in your project
 Select "Signing & Capabilities -> Capability-> Near Field Communication Tag Reading" and then remove the first item from the "entitlements" file created under the project.
-![alt text](https://github.com/abbasamini/Sample-App-For-SDK/blob/main/Image/Screen%20Shot%202023-04-06%20at%201.30.28%20AM.png?raw=true)
 ```
 DELETE “Item 0 (Near Field Communication Tag Reading Session Format) - NFC Data Exchange Format “
 ```
